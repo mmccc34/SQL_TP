@@ -36,4 +36,4 @@ ALTER TABLE Compo
 ADD CONSTRAINT FOREIGN KEY_ID_Bon
 FOREIGN KEY (ID_Bon) REFERENCES Bon(id);
 
-
+-- J'ai un problème de syntaxe que je ne trouve pas --
