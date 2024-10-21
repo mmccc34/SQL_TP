@@ -1,0 +1,39 @@
+CREATE TABLE IF NOT EXISTS Article (
+    id int NOT NULL,
+    Ref int (50),
+    Designation  VARCHAR(255),
+    Prix int,
+    ID_FOU int
+);
+
+CREATE TABLE IF NOT EXISTS Fournisseur (
+    id int NOT NULL,
+    Nom VARCHAR(25)
+);
+CREATE TABLE IF NOT EXISTS Bon (
+    id INT NOT NULL,
+    Numero VARCHAR(25),
+    Date_CMDE TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS Compo (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Qte int (50),
+    Id_ART int,
+    ID_Bon int,   
+);
+
+ALTER TABLE Article
+ADD CONSTRAINT fk_ID_FOU
+FOREIGN KEY (ID_FOU) REFERENCES Fournisseur(id);
+
+
+ALTER TABLE Compo
+ADD CONSTRAINT fk_Id_ART
+FOREIGN KEY (Id_ART) REFERENCES Article(id);
+
+
+ALTER TABLE Compo
+ADD CONSTRAINT fk_ID_Bon
+FOREIGN KEY (ID_Bon) REFERENCES Bon(id);
+
+
