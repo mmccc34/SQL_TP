@@ -37,7 +37,7 @@ ALTER TABLE Bon ADD CONSTRAINT FOREIGN KEY (ID_FOU) REFERENCES Fournisseur(id);
 
 ALTER TABLE Compo ADD CONSTRAINT FOREIGN KEY (ID_ART) REFERENCES Article(id);
 
-ALTER TABLE Compo ADD CONSTRAINT FOREIGN KEY (ID_Bon) REFERENCES Bon(id);;
+ALTER TABLE Compo ADD CONSTRAINT FOREIGN KEY (ID_Bon) REFERENCES Bon(id);
 
 INSERT INTO Fournisseur (id, Nom) VALUES 
 (1, 'Française d Imports'),
@@ -57,3 +57,13 @@ VALUES
 (8, 'D04', 'Coffret mêches à bois', 12.25, 3),
 (9, 'F03', 'Coffret mêches plates', 6.25, 2),
 (10, 'F04', 'Fraises d’encastrement', 8.14, 2);
+
+INSERT INTO Bon (id, numero, delai, ID_FOU)
+VALUES 
+(1, 0001, 3, 1);
+
+INSERT INTO Compo (Qte, ID_ART, ID_Bon)
+VALUES 
+(3, 1, 1),
+(4, 5, 1),
+(1, 7, 1);
