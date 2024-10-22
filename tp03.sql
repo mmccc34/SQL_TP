@@ -35,3 +35,13 @@ USE compta;
 -- Question i. --
 -- SELECT * FROM bon
 -- WHERE Date_CMDE BETWEEN '2019-02-01' AND '2019-04-30';
+
+
+
+
+
+
+-- -- Jointures dans compta
+SELECT * FROM 
+WHERE ID_FOU IN (SELECT ID FROM Fournisseur WHERE nom LIKE 'D%');
+
