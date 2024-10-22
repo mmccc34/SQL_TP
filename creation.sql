@@ -5,7 +5,7 @@ USE tutu;
 
 DROP TABLE IF EXISTS Persons;
 CREATE TABLE IF NOT EXISTS Persons (
-    ID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ID int NOT NULL,
     LastName VARCHAR(50),
     FirstName VARCHAR(50),
     Adress VARCHAR(255),
@@ -17,6 +17,8 @@ CREATE TABLE IF NOT EXISTS Clients (
     Prénom VARCHAR(50),
     Email VARCHAR(50)
 );
-
+INSERT INTO persons (id, LastName, FirstName)
+VALUES (1, ARNAUD, Christophe)
+ALTER TABLE Persons ADD CONSTAINT PRIMARY KEY(id) 
 
 -- ALTER TABLE 

@@ -5,7 +5,7 @@ USE compta;
 DROP TABLE IF EXISTS Article;
 CREATE TABLE IF NOT EXISTS Article (
     id int PRIMARY KEY,
-    Ref int (50),
+    Ref VARCHAR(50),
     Designation  VARCHAR(255),
     Prix DECIMAL(6,2) ,
     ID_FOU int

@@ -47,3 +47,15 @@ VALUES
 
 -- SELECT * FROM client LEFT JOIN compte ON client.id=compte.id_cli
 -- WHERE age >=20;
+
+-- SELECT nom, prenom, SUM(solde) FROM compte, client
+-- WHERE client.id=compte.id_cli
+-- GROUP BY nom, prenom DESC;
+
+
+-- J'ai rajouté SUM(solde) pour afficher en plus le solde total des clients ayant plus de 2 comptes
+-- J'ai également rajouté le prénom dans SELECT et dans GROUP BY
+SELECT nom, prenom, COUNT(*), SUM(solde) FROM compte, client
+WHERE client.id=compte.id_cli
+GROUP BY nom, prenom HAVING COUNT(*)>=2
+
